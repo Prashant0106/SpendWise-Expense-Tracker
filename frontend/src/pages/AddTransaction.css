@@ -1,0 +1,115 @@
+
+.add-transaction-container {
+  min-height: 100vh;
+  padding: 35px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f8fafc;
+}
+
+.add-transaction-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.add-transaction-card h1 {
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.add-transaction-card > p {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  color: #334155;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3b82f6;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.add-transaction-card button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-transaction-card button:hover {
+  background: #1d4ed8;
+}
+
+.add-transaction-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.add-transaction-card > a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.success-message {
+  color: #15803d !important;
+  background: #dcfce7;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.error-message {
+  color: #dc2626 !important;
+  background: #fee2e2;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .add-transaction-container {
+    padding: 20px 12px;
+  }
+
+  .add-transaction-card {
+    padding: 20px;
+  }
+}
