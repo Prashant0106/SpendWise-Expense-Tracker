@@ -7,6 +7,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const transactionRoutes = require('./routes/transactionRoutes');
+const budgetRoutes = require('./routes/budgetRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -21,8 +22,10 @@ app.use(express.json());
 // Connect MongoDB
 connectDB();
 
+//Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
+app.use('/api/budgets', budgetRoutes);
 
 // Test route
 app.get('/', (req, res) => {

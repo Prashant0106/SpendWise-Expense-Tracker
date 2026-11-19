@@ -7,6 +7,7 @@ import AuthPage from "./pages/AuthPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
 import Profile from "./pages/Profile";
+import Budget from "./pages/Budget"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/transactions/add" element={<AddTransaction />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/budget" element={<Budget />} />
         </Route>
       </Route>
     </Routes>

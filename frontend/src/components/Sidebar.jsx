@@ -8,6 +8,7 @@ import {
   Menu,
   X,
   UserRound,
+  PiggyBank,
 } from "lucide-react";
 
 import "./Sidebar.css";
@@ -103,7 +104,19 @@ function Sidebar() {
             <Receipt size={20} />
             {!collapsed && <span>Transactions</span>}
           </NavLink>
-          
+
+          <NavLink
+            to="/budget"
+            title="Budget"
+            onClick={closeMobileMenu}
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <PiggyBank size={20} />
+            {!collapsed && <span>Budget</span>}
+          </NavLink>
+
           <NavLink
             to="/profile"
             title="Profile"
