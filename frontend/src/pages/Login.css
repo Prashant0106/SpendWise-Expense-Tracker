@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -7,7 +6,7 @@
   min-height: 100vh;
   display: flex;
   background: #f7f9fc;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Left Branding Panel */
@@ -26,7 +25,7 @@
 }
 
 .auth-brand-panel::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 350px;
   height: 350px;
@@ -37,7 +36,7 @@
 }
 
 .auth-brand-panel::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 230px;
   height: 230px;
@@ -73,7 +72,6 @@
   z-index: 1;
   margin: 55px 0;
 }
-
 
 .brand-tagline {
   display: inline-flex;
@@ -355,7 +353,9 @@
 /* Smooth input interaction */
 
 .input-wrapper {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease,
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
     transform 0.3s ease;
 }
 
@@ -371,7 +371,6 @@
     animation: none;
   }
 }
-
 
 @media (max-width: 650px) {
   .auth-container {

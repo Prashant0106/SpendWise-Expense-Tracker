@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import AddTransactionModal from "../components/AddTransactionModal";
+import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 
 import API from "../services/api";
 
@@ -147,18 +148,34 @@ function Dashboard() {
       </div>
 
       {/* Summary Cards */}
+      {/* Summary Cards */}
       <div className="summary-grid">
+        {/* Total Income */}
         <div className="summary-card income-card">
+          <div className="summary-icon income-icon">
+            <TrendingUp size={22} />
+          </div>
+
           <p>Total Income</p>
           <h2>{formatCurrency(summary.totalIncome)}</h2>
         </div>
 
+        {/* Total Expenses */}
         <div className="summary-card expense-card">
+          <div className="summary-icon expense-icon">
+            <TrendingDown size={22} />
+          </div>
+
           <p>Total Expenses</p>
           <h2>{formatCurrency(summary.totalExpenses)}</h2>
         </div>
 
+        {/* Current Balance */}
         <div className="summary-card balance-card">
+          <div className="summary-icon balance-icon">
+            <Wallet size={22} />
+          </div>
+
           <p>Current Balance</p>
           <h2>{formatCurrency(summary.balance)}</h2>
         </div>
@@ -188,7 +205,7 @@ function Dashboard() {
                 <Bar
                   dataKey="income"
                   name="Income"
-                  fill="#16a34a"
+                  fill="#10b981"
                   radius={[5, 5, 0, 0]}
                 />
 

@@ -108,7 +108,7 @@
 .transaction-summary-card h2 {
   font-size: 25px;
   font-weight: 700;
-  color: #173f35;
+  color: #3b82f6;
   margin-bottom: 8px;
   overflow-wrap: anywhere;
 }
@@ -120,7 +120,7 @@
 }
 
 .transaction-summary-card.total-card {
-  border-left: 5px solid #173f35;
+  border-left: 5px solid #3b82f6;
 }
 
 .transaction-summary-card.income-card {
@@ -137,6 +137,31 @@
 
 .transaction-summary-card.expense-card h2 {
   color: #dc2626;
+}
+/* Summary Card Icons */
+.summary-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  margin-bottom: 18px;
+}
+
+.total-icon {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+.income-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.expense-icon {
+  background: #fee2e2;
+  color: #ef4444;
 }
 
 /* =================================

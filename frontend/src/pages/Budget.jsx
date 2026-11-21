@@ -23,6 +23,7 @@ function Budget() {
   const [categoryName, setCategoryName] = useState("");
   const [categoryLimit, setCategoryLimit] = useState("");
   const [savingCategory, setSavingCategory] = useState(false);
+  const [editingCategory, setEditingCategory] = useState(null);
 
   const monthNames = [
     "January",
@@ -150,10 +151,15 @@ function Budget() {
         categoryBudgets: updatedCategories,
       });
 
-      setSuccessMessage("Category budget saved successfully!");
+      setSuccessMessage(
+        editingCategory
+          ? "Category budget saved successfully!"
+          : "Category budget saved successfully!",
+      );
 
       setCategoryName("");
       setCategoryLimit("");
+      setEditingCategory(null);
 
       await fetchBudgetData();
     } catch (error) {
@@ -165,6 +171,14 @@ function Budget() {
     } finally {
       setSavingCategory(false);
     }
+  };
+  const handleEditCategory = (category) => {
+    setCategoryName(category.category);
+    setCategoryLimit(category.limit);
+    setEditingCategory(category.category);
+
+    setError("");
+    setSuccessMessage("");
   };
 
   return (
@@ -209,7 +223,7 @@ function Budget() {
       {/* Budget Overview */}
       <div className="budget-overview">
         {/* Total Budget */}
-        <div className="budget-card">
+        <div className="budget-card total-card">
           <div className="budget-card-header">
             <div className="budget-card-icon budget-icon-total">
               <Wallet size={22} />
@@ -224,7 +238,7 @@ function Budget() {
         </div>
 
         {/* Total Spent */}
-        <div className="budget-card">
+        <div className="budget-card spent-card">
           <div className="budget-card-header">
             <div className="budget-card-icon budget-icon-spent">
               <TrendingDown size={22} />
@@ -237,7 +251,7 @@ function Budget() {
         </div>
 
         {/* Remaining Budget */}
-        <div className="budget-card">
+        <div className="budget-card remaining-card">
           <div className="budget-card-header">
             <div className="budget-card-icon budget-icon-remaining">
               <TrendingUp size={22} />
@@ -315,7 +329,7 @@ function Budget() {
                     setCategoryLimit("");
                     setError("");
                   }}
-                  required
+                  disabled={!!editingCategory}
                 >
                   <option value="">Select category</option>
                   <option value="Food">Food</option>
@@ -350,13 +364,35 @@ function Budget() {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className="save-category-btn"
-                disabled={savingCategory}
-              >
-                {savingCategory ? "Saving..." : "Add Category"}
-              </button>
+              <div className="category-form-actions">
+                <button
+                  type="submit"
+                  className="save-category-btn"
+                  disabled={savingCategory}
+                >
+                  {savingCategory
+                    ? "Saving..."
+                    : editingCategory
+                      ? "Update Category"
+                      : "Add Category"}
+                </button>
+
+                {editingCategory && (
+                  <button
+                    type="button"
+                    className="cancel-category-btn"
+                    onClick={() => {
+                      setCategoryName("");
+                      setCategoryLimit("");
+                      setEditingCategory(null);
+                      setError("");
+                      setSuccessMessage("");
+                    }}
+                  >
+                    Cancel
+                  </button>
+                )}
+              </div>
             </form>
 
             {/* Category Budget List */}
@@ -388,6 +424,15 @@ function Budget() {
                             ₹{spent.toLocaleString("en-IN")} spent of ₹
                             {category.limit.toLocaleString("en-IN")}
                           </p>
+                        </div>
+                        <div className="category-card-actions">
+                          <button
+                            type="button"
+                            className="edit-category-btn"
+                            onClick={() => handleEditCategory(category)}
+                          >
+                            Edit
+                          </button>
                         </div>
 
                         <div className="category-budget-amount">

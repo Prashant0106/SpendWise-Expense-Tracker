@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Plus, ArrowLeft, Pencil, Trash2, Search } from "lucide-react";
+import {
+  Plus,
+  ArrowLeft,
+  Pencil,
+  Trash2,
+  Search,
+  Receipt,
+  TrendingUp,
+  TrendingDown,
+} from "lucide-react";
 import API from "../services/api";
 import "./Transactions.css";
 import AddTransactionModal from "../components/AddTransactionModal";
@@ -250,13 +259,23 @@ function Transactions() {
 
       {/* Transaction Summary Cards */}
       <div className="transaction-summary-cards">
+        {/* Total Transactions */}
         <div className="transaction-summary-card total-card">
+          <div className="summary-icon total-icon">
+            <Receipt size={22} />
+          </div>
+
           <h3>Total Transactions</h3>
           <h2>{totalTransactions}</h2>
           <p>Transactions found</p>
         </div>
 
+        {/* Total Income */}
         <div className="transaction-summary-card income-card">
+          <div className="summary-icon income-icon">
+            <TrendingUp size={22} />
+          </div>
+
           <h3>Total Income</h3>
           <h2>
             {totalIncome.toLocaleString("en-IN", {
@@ -268,7 +287,12 @@ function Transactions() {
           <p>Your total income</p>
         </div>
 
+        {/* Total Expenses */}
         <div className="transaction-summary-card expense-card">
+          <div className="summary-icon expense-icon">
+            <TrendingDown size={22} />
+          </div>
+
           <h3>Total Expenses</h3>
           <h2>
             {totalExpenses.toLocaleString("en-IN", {

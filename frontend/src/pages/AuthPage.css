@@ -285,6 +285,24 @@
   font-size: 12px;
   margin-top: 55px;
 }
+/* Chrome Autofill Fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #1e293b !important;
+  caret-color: #1e293b;
+  transition: background-color 999999s ease-in-out 0s;
+}
+
+/* Remove autofill's internal background */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+}
 
 /* ==============================
    MOBILE RESPONSIVENESS

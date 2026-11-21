@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  background: #16a34a;
+  background: #173f35;
   color: white;
   text-decoration: none;
   border: none;
@@ -50,7 +50,7 @@
 }
 
 .add-transaction-btn:hover {
-  background: #15803d;
+  background: #245b49;
   transform: translateY(-2px);
   box-shadow: 0 5px 12px rgba(22, 163, 74, 0.2);
 }
@@ -95,6 +95,32 @@
   font-weight: 700;
   color: #1e293b;
   overflow-wrap: anywhere;
+}
+/* Summary Card Icons */
+
+.summary-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  margin-bottom: 18px;
+}
+
+.income-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.expense-icon {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.balance-icon {
+  background: #dbeafe;
+  color: #3b82f6;
 }
 
 .income-card {

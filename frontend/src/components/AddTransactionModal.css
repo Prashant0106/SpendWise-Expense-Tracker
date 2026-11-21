@@ -116,12 +116,12 @@
 }
 
 .add-modal-submit {
-  background: #20b98b;
+  background: #173f35;
   color: #ffffff;
 }
 
 .add-modal-submit:hover {
-  background: #159b73;
+  background: #245b49;
 }
 
 .add-modal-submit:disabled,

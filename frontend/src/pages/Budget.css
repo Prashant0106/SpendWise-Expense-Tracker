@@ -83,6 +83,7 @@
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  border-left: 5px solid;
 }
 
 .budget-card-header {
@@ -132,6 +133,47 @@
   font-size: 13px;
   color: #94a3b8;
   margin: 0;
+}
+/* ================================
+   Budget Summary Card Colors
+================================ */
+
+/* Total Budget - Green */
+.total-card {
+  border-left: 5px solid #16a34a !important;
+}
+
+.total-card h2 {
+  color: #16a34a;
+}
+
+/* Total Spent - Red */
+.spent-card {
+  border-left: 5px solid #ef4444 !important;
+}
+
+.spent-card h2 {
+  color: #ef4444;
+}
+
+/* Remaining Budget - Blue */
+.remaining-card {
+  border-left: 5px solid #3b82f6 !important;
+}
+
+.remaining-card h2 {
+  color: #3b82f6;
+}
+
+/* Icon colors */
+.budget-icon-spent {
+  background: #fee2e2 !important;
+  color: #ef4444 !important;
+}
+
+.budget-icon-remaining {
+  background: #dbeafe !important;
+  color: #3b82f6 !important;
 }
 
 /* Budget Content */
@@ -515,6 +557,56 @@
     flex-direction: column;
     gap: 6px;
   }
+}
+/* Category Form Actions */
+
+.category-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.category-form-actions .save-category-btn {
+  flex: 1;
+}
+
+.cancel-category-btn {
+  padding: 12px 18px;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cancel-category-btn:hover {
+  background: #e2e8f0;
+}
+
+/* Category Card Actions */
+
+.category-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.edit-category-btn {
+  padding: 7px 14px;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-category-btn:hover {
+  background: #d1fae5;
 }
 
 /* Responsive */
